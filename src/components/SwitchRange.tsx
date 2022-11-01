@@ -5,6 +5,7 @@ interface ISwitchRangeProps {
    title: string
    items: SwitchRangeItem[]
    maxWidth?: string
+   onChange: (value: string) => void
 }
 
 export type SwitchRangeItem = {
@@ -80,7 +81,7 @@ const RangeItem = styled.div<IRangeItemProps>`
    }
 `
 
-const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "100%" }) => {
+const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "100%", onChange }) => {
    const [switchValue, setSwitchValue] = useState(items[0].value)
    const [isSwitching, setIsSwitching] = useState(false)
 
@@ -90,6 +91,7 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
       }
       if (value !== switchValue) {
          setSwitchValue(value)
+         onChange(value)
       }
    }
 
@@ -103,6 +105,7 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
       window.addEventListener("mouseup", onHandleMouseUp)
       if (value !== switchValue) {
          setSwitchValue(value)
+         onChange(value)
       }
    }
 
@@ -112,6 +115,7 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
          <RangeContainer>
             {items.map(({ value, label }) => (
                <RangeItemWrapper
+                  key={value}
                   onMouseEnter={() => onRangeItemMouseEnter(value)}
                   onMouseDown={() => onHandleMouseDown(value)}
                >
