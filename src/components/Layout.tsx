@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import GlobalStyles from "./styled/GlobalStyles.styled"
+import GlobalStyles from "./_styled/GlobalStyles.styled"
 
 interface ILayoutProps {
    children: ReactNode

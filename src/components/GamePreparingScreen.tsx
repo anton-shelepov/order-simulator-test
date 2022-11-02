@@ -3,8 +3,8 @@ import { useState } from "react"
 import SortType from "../utils/enums/sortType.enum"
 import RadioButton from "./RadioButton"
 import SwitchRange, { SwitchRangeItem } from "./SwitchRange"
-import BackgroundImageWrapper from "./styled/BackgroundImageWrapper.styled"
-import PlayButton from "./styled/PlayButton.styled"
+import BackgroundImageWrapper from "./_styled/BackgroundImageWrapper.styled"
+import PlayButton from "./_styled/PlayButton.styled"
 
 interface IGamePreparingScreenProps {
    onPlayClick: (settings: GameSettings) => void

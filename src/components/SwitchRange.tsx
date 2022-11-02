@@ -41,14 +41,14 @@ const RangeItemWrapper = styled.div`
    display: flex;
    justify-content: center;
    width: 100%;
-   &:first-child,
-   &:last-child {
+   &:first-of-type,
+   &:last-of-type {
       width: 50%;
    }
-   &:first-child {
+   &:first-of-type {
       justify-content: flex-start;
    }
-   &:last-child {
+   &:last-of-type {
       justify-content: flex-end;
    }
 `
