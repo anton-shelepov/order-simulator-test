@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { unselectable } from "../../styles/mixins.styled"
 
 const PlayButton = styled.button`
    background-color: #38df7a;
@@ -10,6 +11,7 @@ const PlayButton = styled.button`
    padding: 10px 75px;
    cursor: pointer;
    transition: opacity 0.2s;
+   ${unselectable}
 
    &:hover {
       opacity: 0.8;

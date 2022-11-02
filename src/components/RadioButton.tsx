@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { unselectable } from "../styles/mixins.styled"
 
 interface IRadioButtonProps {
    checked: boolean
@@ -22,11 +23,7 @@ const Label = styled.label<ILabelProps>`
    opacity: ${(p) => (p.checked ? 1 : 0.56)};
    cursor: pointer;
    white-space: nowrap;
-   user-select: none;
-   -moz-user-select: none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   -o-user-select: none;
+   ${unselectable}
 `
 
 const Input = styled.input`

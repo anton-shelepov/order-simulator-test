@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { useState } from "react"
+import { unselectable } from "../styles/mixins.styled"
 
 interface ISwitchRangeProps {
    title: string
@@ -60,6 +61,7 @@ const RangeContainer = styled.div`
    border-radius: 10px;
    justify-content: space-between;
    width: 100%;
+   ${unselectable}
 `
 
 const RangeItem = styled.div<IRangeItemProps>`
@@ -69,6 +71,7 @@ const RangeItem = styled.div<IRangeItemProps>`
    height: 23px;
    border-radius: 50%;
    position: relative;
+
    &::after {
       content: ${(p) => `"${p.label}"`};
       position: absolute;
@@ -85,14 +88,19 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
    const [switchValue, setSwitchValue] = useState(items[0].value)
    const [isSwitching, setIsSwitching] = useState(false)
 
+   const updateValue = (value: string) => {
+      if (value === switchValue) {
+         return
+      }
+      setSwitchValue(value)
+      onChange(value)
+   }
+
    const onRangeItemMouseEnter = (value: string) => {
       if (!isSwitching) {
          return
       }
-      if (value !== switchValue) {
-         setSwitchValue(value)
-         onChange(value)
-      }
+      updateValue(value)
    }
 
    const onHandleMouseUp = () => {
@@ -103,10 +111,7 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
    const onHandleMouseDown = (value: string) => {
       setIsSwitching(true)
       window.addEventListener("mouseup", onHandleMouseUp)
-      if (value !== switchValue) {
-         setSwitchValue(value)
-         onChange(value)
-      }
+      updateValue(value)
    }
 
    return (

@@ -1,6 +1,6 @@
 enum GameStatus {
    PREPARING = "PREPARING",
-   IN_PROGRESS = "IN_PROGRESS",
+   IN_PROCESS = "IN_PROCESS",
    DONE = "DONE",
 }
 
