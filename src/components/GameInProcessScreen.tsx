@@ -5,6 +5,7 @@ import getRandomTheme from "../utils/scripts/getRandomTheme"
 import randomFromTo from "../utils/scripts/randomFromTo"
 import selectValuesRange from "../utils/scripts/selectValuesRange"
 import DraggableItemsZone from "./DraggableItemsZone"
+import DroppableItemsZone from "./DroppableItemsZone"
 import { GameSettings } from "./GamePreparingScreen"
 import ThemeBackgroundSelector from "./ThemeBackgroundSelector"
 
@@ -14,9 +15,11 @@ interface IGameInProcessScreenProps {
 
 const Container = styled.div`
    display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    align-items: center;
-   justify-content: center;
    height: 100%;
+   padding: 150px 0 50px 0;
 `
 
 const GameInProcessScreen: React.FC<IGameInProcessScreenProps> = ({
@@ -32,6 +35,7 @@ const GameInProcessScreen: React.FC<IGameInProcessScreenProps> = ({
          <ThemeBackgroundSelector themeName={themeName}>
             <Container>
                <DraggableItemsZone itemsValues={itemsValues} />
+               <DroppableItemsZone />
             </Container>
          </ThemeBackgroundSelector>
       </ThemeProvider>

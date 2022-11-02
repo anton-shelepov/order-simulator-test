@@ -24,8 +24,8 @@ const Container = styled.div`
    flex-direction: column;
    align-items: center;
    padding: 55px 85px;
-   width: 530px;
-   height: 550px;
+   width: 700px;
+   height: 660px;
 `
 
 const RadioButtonsBlock = styled.div`

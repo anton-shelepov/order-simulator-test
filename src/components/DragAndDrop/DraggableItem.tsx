@@ -21,7 +21,7 @@ interface IContainerProps {
 const Container = styled.div<IContainerProps>`
    position: relative;
    width: fit-content;
-   transform: translateY(${(p) => (isEven(p.index) ? 0 : "-100%")});
+   transform: translateY(${(p) => (isEven(p.index) ? "100%" : "0")});
    ${unselectable}
 `
 

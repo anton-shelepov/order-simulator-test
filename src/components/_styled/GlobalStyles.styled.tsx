@@ -17,6 +17,9 @@ const GlobalStyles = () => {
             h6 {
                margin: 0;
             }
+            * {
+               box-sizing: border-box;
+            }
          `}
       />
    )

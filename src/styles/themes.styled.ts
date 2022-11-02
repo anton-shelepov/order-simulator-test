@@ -11,6 +11,7 @@ const themes: Themes = {
          item3: "/images/themes/candies-theme/items/item-3.png",
          item4: "/images/themes/candies-theme/items/item-4.png",
       },
+      droppableBackground: "/images/themes/candies-theme/droppable-bg.png",
    },
    [ThemeName.COINS]: {
       itemsImages: {
@@ -18,6 +19,7 @@ const themes: Themes = {
          item2: "/images/themes/coins-theme/items/item-2.png",
          item3: "/images/themes/coins-theme/items/item-3.png",
       },
+      droppableBackground: "/images/themes/coins-theme/droppable-bg.png",
    },
    [ThemeName.NEW_YEAR]: {
       itemsImages: {
@@ -27,6 +29,7 @@ const themes: Themes = {
          item4: "/images/themes/new-year-theme/items/item-4.png",
          item5: "/images/themes/new-year-theme/items/item-5.png",
       },
+      droppableBackground: "/images/themes/new-year-theme/droppable-bg.png",
    },
    [ThemeName.FLOWERS]: {
       itemsImages: {
@@ -36,6 +39,7 @@ const themes: Themes = {
          item4: "",
          item5: "",
       },
+      droppableBackground: "/images/themes/flowers-theme/droppable-bg.png",
    },
 }
 
