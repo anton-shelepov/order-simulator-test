@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { useState } from "react"
+import useSound from "use-sound"
 import { unselectable } from "../styles/mixins.styled"
 
 interface ISwitchRangeProps {
@@ -88,12 +89,15 @@ const SwitchRange: React.FC<ISwitchRangeProps> = ({ items, title, maxWidth = "10
    const [switchValue, setSwitchValue] = useState(items[0].value)
    const [isSwitching, setIsSwitching] = useState(false)
 
+   const [playSwitchSound] = useSound("/sounds/switch-change.wav")
+
    const updateValue = (value: string) => {
       if (value === switchValue) {
          return
       }
       setSwitchValue(value)
       onChange(value)
+      playSwitchSound()
    }
 
    const onRangeItemMouseEnter = (value: string) => {

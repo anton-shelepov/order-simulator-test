@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@emotion/react"
 import styled from "@emotion/styled"
+import { useCallback } from "react"
 import themes from "../styles/themes.styled"
 import getRandomTheme from "../utils/scripts/getRandomTheme"
 import randomFromTo from "../utils/scripts/randomFromTo"
@@ -27,8 +28,14 @@ const GameInProcessScreen: React.FC<IGameInProcessScreenProps> = ({
 }) => {
    const { themeName, theme } = getRandomTheme(themes)
 
-   const [rangeFrom, rangeTo] = selectValuesRange(values)
-   const itemsValues = Array.from({ length: itemsQuantity }, () => randomFromTo(rangeFrom, rangeTo))
+   const getItemsValues = useCallback(() => {
+      const [rangeFrom, rangeTo] = selectValuesRange(values)
+      const itemsValues = Array.from({ length: itemsQuantity }, () => randomFromTo(rangeFrom, rangeTo))
+
+      return itemsValues
+   }, [values])
+
+   const itemsValues = getItemsValues()
 
    return (
       <ThemeProvider theme={theme}>

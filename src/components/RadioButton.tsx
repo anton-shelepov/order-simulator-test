@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import useSound from "use-sound"
 import { unselectable } from "../styles/mixins.styled"
 
 interface IRadioButtonProps {
@@ -34,8 +35,11 @@ const Input = styled.input`
 `
 
 const RadioButton: React.FC<IRadioButtonProps> = ({ label, value, onChange, ...restProps }) => {
+   const [playRadioChangeSound] = useSound("/sounds/radio-change.wav")
+
    const onHandleChange = () => {
       onChange(value)
+      playRadioChangeSound()
    }
 
    return (

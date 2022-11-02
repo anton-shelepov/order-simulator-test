@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { useState } from "react"
+import useSound from "use-sound"
 import SortType from "../utils/enums/sortType.enum"
 import RadioButton from "./RadioButton"
 import SwitchRange, { SwitchRangeItem } from "./SwitchRange"
@@ -66,6 +67,9 @@ const GamePreparingScreen: React.FC<IGamePreparingScreenProps> = ({ onPlayClick 
       values: "A",
    })
 
+   const [gameStartSoundPlay] = useSound("/sounds/game-start.ogg")
+   const [gameProcessSoundPlay] = useSound("/sounds/game-process.mp3")
+
    const onHandleSortTypeSettingsChange = (value: string) => {
       setSettings({ ...settings, sortType: value as SortType })
    }
@@ -80,6 +84,8 @@ const GamePreparingScreen: React.FC<IGamePreparingScreenProps> = ({ onPlayClick 
 
    const onHandlePlayButtonClick = () => {
       onPlayClick(settings)
+      gameStartSoundPlay()
+      gameProcessSoundPlay()
    }
 
    return (
