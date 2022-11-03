@@ -17,7 +17,7 @@ interface IGameInProcessScreenProps {
 const Container = styled.div`
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   justify-content: flex-end;
    align-items: center;
    height: 100%;
    padding: 150px 0 50px 0;

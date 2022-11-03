@@ -7,8 +7,13 @@ interface IDraggableItemsZoneProps {
 
 const Container = styled.div`
    display: flex;
+   position: absolute;
+   top: 0;
+   left: 0;
    align-items: center;
-   position: relative;
+   justify-content: center;
+   width: 100vw;
+   height: 100vh;
 `
 
 const DraggableItemsZone: React.FC<IDraggableItemsZoneProps> = ({ itemsValues }) => {

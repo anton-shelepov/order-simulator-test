@@ -8,10 +8,11 @@ const Container = styled.div`
    width: 131px;
    height: 131px;
    border-radius: 50%;
+   z-index: 2;
 `
 
 const DroppableItem: React.FC<IDroppableItemProps> = () => {
-   return <Container></Container>
+   return <Container onMouseDown={() => console.log("down")} onMouseUp={() => console.log("up")}></Container>
 }
 
 export default DroppableItem
